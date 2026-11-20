@@ -1,0 +1,82 @@
+{
+  "challenges": [
+    {
+      "id": "c-lab-drawer",
+      "title": "The Locked Lab Drawer",
+      "location": "Room 204, Chemistry",
+      "category": "Chemistry",
+      "difficulty": 2,
+      "estimatedMinutes": 10,
+      "description": "A drawer is sealed with a 4-digit code. The clues are hidden on the periodic table posters.",
+      "instructions": [
+        "Find the 4 posters on the back wall.",
+        "Each poster has one element highlighted in red.",
+        "Convert the atomic numbers of those elements into digits, in poster order.",
+        "Enter the 4-digit code on the drawer lock."
+      ],
+      "materials": [
+        "Periodic table posters",
+        "Pen and paper"
+      ],
+      "hints": [
+        "Atomic number = number of protons.",
+        "Poster order is left to right."
+      ],
+      "updatedAt": "2026-11-20T09:22:08.662Z"
+    },
+    {
+      "id": "c-caesar",
+      "title": "Caesar's Message",
+      "location": "Room 110, Library",
+      "category": "English",
+      "difficulty": 1,
+      "estimatedMinutes": 8,
+      "description": "An envelope contains a message encrypted with a Caesar cipher. Decode it to get the password for the next envelope.",
+      "instructions": [
+        "Use the cipher wheel printout to decode the message.",
+        "Shift each letter back by 3 positions.",
+        "The decoded word is the password for the next envelope."
+      ],
+      "materials": [
+        "Cipher wheel printout",
+        "Sealed envelope"
+      ],
+      "hints": [
+        "A shifts back to X, B to Y, C to Z."
+      ],
+      "updatedAt": "2026-11-20T09:22:08.662Z"
+    }
+  ],
+  "attempts": [
+    {
+      "id": "254e3139-ffeb-40b6-9704-bb9b844a665d",
+      "challengeId": "c-lab-drawer",
+      "startedAt": 1795166672611,
+      "stoppedAt": 1795166705362,
+      "durationMs": 32751,
+      "rating": {
+        "enjoyment": 5,
+        "comment": "yaayy"
+      }
+    },
+    {
+      "id": "c92477e4-2b11-42bf-9277-5f1207caa2bf",
+      "challengeId": "c-lab-drawer",
+      "startedAt": 1795166747311,
+      "stoppedAt": 1795166748036,
+      "durationMs": 725,
+      "rating": {
+        "enjoyment": 2,
+        "comment": ""
+      }
+    },
+    {
+      "id": "94f098d4-fecf-43e6-afb0-1ed81b11f597",
+      "challengeId": "c-lab-drawer",
+      "startedAt": 1795167070354,
+      "stoppedAt": null,
+      "durationMs": null,
+      "rating": null
+    }
+  ]
+}

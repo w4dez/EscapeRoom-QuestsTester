@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EscapeAI · Challenge</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body class="player">
+  <main>
+    <!-- Shown when no valid ?c= is given: pick a challenge manually -->
+    <section id="pick" class="hidden">
+      <h1>Pick a challenge</h1>
+      <p class="muted">Scan the QR code at the challenge, or choose it here.</p>
+      <div id="pickList"></div>
+    </section>
+
+    <!-- Intro: description, materials, go button -->
+    <section id="intro" class="hidden">
+      <p class="muted" id="introMeta"></p>
+      <h1 id="introTitle" class="title"></h1>
+      <p id="introLocation" class="muted"></p>
+      <p id="introDescription"></p>
+      <h2>Materials</h2>
+      <ul id="introMaterials" class="steps"></ul>
+      <button id="goBtn" class="big-btn go" style="margin-top: 1rem;">GO</button>
+      <p id="introError" class="error"></p>
+    </section>
+
+    <!-- Running: stopwatch + steps + hints -->
+    <section id="running" class="hidden">
+      <p class="muted" id="runTitle"></p>
+      <div id="clock" class="clock">00:00.0</div>
+      <button id="stopBtn" class="big-btn stop" style="margin-bottom: 1.25rem;">STOP</button>
+      <h2>Steps</h2>
+      <ol id="runSteps" class="steps"></ol>
+      <details id="runMaterialsBox">
+        <summary>Materials</summary>
+        <ul id="runMaterials" class="steps"></ul>
+      </details>
+      <div class="card" style="margin-top: 1rem;">
+        <button id="hintBtn" type="button" class="big-btn">Need a hint?</button>
+        <p id="hintInfo" class="muted" style="margin: 0.6rem 0;"></p>
+        <ol id="runHints" class="steps"></ol>
+      </div>
+    </section>
+
+    <!-- Rate -->
+    <section id="rate" class="hidden">
+      <p class="muted">Time: <b id="rateTime"></b></p>
+      <h1>How much did you enjoy it?</h1>
+      <div class="rate-grid" id="rateGrid">
+        <button type="button" data-value="1">1</button>
+        <button type="button" data-value="2">2</button>
+        <button type="button" data-value="3">3</button>
+        <button type="button" data-value="4">4</button>
+        <button type="button" data-value="5">5</button>
+      </div>
+      <div class="rate-labels"><span>Not fun</span><span>Loved it</span></div>
+      <label>Anything to add? (optional)
+        <textarea id="comment" maxlength="500" rows="3"></textarea>
+      </label>
+      <button id="submitRating" class="big-btn primary" disabled>Submit</button>
+      <p id="rateError" class="error"></p>
+    </section>
+
+    <!-- Done -->
+    <section id="done" class="hidden">
+      <h1>Thanks!</h1>
+      <p class="muted">Your rating was saved.</p>
+      <button id="againBtn" class="big-btn primary">Next player</button>
+    </section>
+  </main>
+
+  <script src="/assets/live.js"></script>
+</body>
+</html>

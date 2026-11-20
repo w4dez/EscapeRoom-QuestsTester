@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EscapeAI · Teacher admin</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+  <header class="top">
+    <span class="brand">EscapeAI · Teacher admin</span>
+    <button id="logout" class="hidden">Log out</button>
+  </header>
+
+  <main>
+    <!-- Login -->
+    <section id="login" class="card hidden" style="max-width: 380px; margin: 3rem auto;">
+      <h2>Teacher login</h2>
+      <form id="loginForm">
+        <label>Password
+          <input type="password" id="password" autocomplete="current-password" required>
+        </label>
+        <button class="primary" type="submit">Log in</button>
+        <p id="loginError" class="error"></p>
+      </form>
+    </section>
+
+    <!-- Editor -->
+    <section id="editor" class="hidden">
+      <div class="split">
+        <aside class="card">
+          <div class="row" style="margin-bottom: 0.75rem;">
+            <h2 style="margin: 0; flex: 1;">Challenges</h2>
+            <button id="newBtn" class="primary shrink">+ New</button>
+          </div>
+          <div id="list" class="list"></div>
+        </aside>
+
+        <div>
+          <form id="form" class="card">
+            <h2 id="formTitle">New challenge</h2>
+
+            <label>Title
+              <input id="title" required maxlength="120">
+            </label>
+
+            <div class="row">
+              <label>Location
+                <input id="location" maxlength="120" placeholder="Room 204">
+              </label>
+              <label>Subject
+                <input id="category" maxlength="60" placeholder="Chemistry">
+              </label>
+            </div>
+
+            <div class="row">
+              <label>Difficulty
+                <select id="difficulty">
+                  <option value="1">1 · Easy</option>
+                  <option value="2" selected>2 · Medium</option>
+                  <option value="3">3 · Hard</option>
+                </select>
+              </label>
+              <label>Estimated minutes
+                <input id="estimatedMinutes" type="number" min="1" max="240" value="10">
+              </label>
+            </div>
+
+            <label>Description (shown to players first)
+              <textarea id="description" maxlength="2000"></textarea>
+            </label>
+
+            <label>Steps / questions (one per line)
+              <textarea id="instructions" rows="5"></textarea>
+            </label>
+
+            <label>Materials (one per line)
+              <textarea id="materials" rows="3"></textarea>
+            </label>
+
+            <label>Hints, in order (one per line: 1 = vague nudge, 2 = more help, 3 = nearly the answer)
+              <textarea id="hints" rows="3"></textarea>
+            </label>
+
+            <div class="row">
+              <button class="primary shrink" type="submit">Save</button>
+              <button id="deleteBtn" class="danger shrink" type="button">Delete</button>
+              <span id="saveStatus" class="muted"></span>
+            </div>
+            <p id="formError" class="error"></p>
+          </form>
+
+          <section id="qrCard" class="card hidden">
+            <h2>Player QR code</h2>
+            <p class="muted">Print this and stick it next to the challenge.</p>
+            <div class="row" style="align-items: flex-start;">
+              <canvas id="qrCanvas" style="background: #fff; border-radius: 8px;"></canvas>
+              <div style="flex: 1;">
+                <p><a id="liveLink" target="_blank" rel="noopener"></a></p>
+                <p><a id="qrDownload" class="btn" download="qr.png">Download PNG</a></p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/admin.js"></script>
+</body>
+</html>

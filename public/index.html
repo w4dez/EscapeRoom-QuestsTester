@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EscapeAI · Challenges &amp; stats</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="top">
+    <span class="brand">EscapeAI</span>
+    <span class="muted" id="updated"></span>
+  </header>
+
+  <main>
+    <h1>Escape room challenges</h1>
+    <p class="muted">Every challenge in the room, with how players are doing. Refreshes every 15 seconds.</p>
+
+    <h2 style="margin-top: 1.5rem;">Overview</h2>
+    <div class="card" style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Challenge</th>
+            <th>Location</th>
+            <th>Difficulty</th>
+            <th>Attempts</th>
+            <th>Completed</th>
+            <th>Avg hints</th>
+            <th>Best time</th>
+            <th>Avg time</th>
+            <th>Enjoyment</th>
+          </tr>
+        </thead>
+        <tbody id="overview"></tbody>
+      </table>
+    </div>
+
+    <h2 style="margin-top: 1.5rem;">Challenges</h2>
+    <div id="cards" class="grid cards"></div>
+  </main>
+
+  <script src="/assets/dashboard.js"></script>
+</body>
+</html>
